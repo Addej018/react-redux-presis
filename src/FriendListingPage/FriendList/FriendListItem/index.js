@@ -3,7 +3,7 @@ import classnames from 'classnames';
 import styles from './FriendListItem.css';
 
 
-export default ({friend, deleteFriend}) => (
+export default () => (
   <li className={styles.friendListItem}>
     <div className={styles.friendInfos}>
       <div><span>{friend.name}</span></div>
@@ -12,7 +12,7 @@ export default ({friend, deleteFriend}) => (
       <button className={`btn btn-default ${styles.btnAction}`} >
         <i className={classnames('fa', { 'fa-star': friend.starred }, { 'fa-star-o': !friend.starred }) } />
       </button>
-      <button className={`btn btn-default ${styles.btnAction}`} onClick={e => deleteFriend(friend.id) }>
+      <button className={`btn btn-default ${styles.btnAction}`}>
         <i className="fa fa-trash" />
       </button>
     </div>

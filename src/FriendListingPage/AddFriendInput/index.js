@@ -13,8 +13,7 @@ export default class AddFriendInput extends Component {
         className={classnames('form-control', styles.addFriendInput)}
         placeholder="Type the name of a friend"
         value={this.state.name}
-        onChange={this.handleChange.bind(this)}
-        onKeyDown={this.handleSubmit.bind(this)} />
+        onChange={this.handleChange.bind(this)} />
     );
   }
 
@@ -28,17 +27,8 @@ export default class AddFriendInput extends Component {
   handleChange (e) {
     this.setState({ name: e.target.value });
   }
-
-  handleSubmit (e) {
-    if (e.which === keyCodeEnter) {
-      const name = e.target.value.trim();
-      this.props.addFriend(name);
-      this.setState({ name: '' });
-    }
-  }
-
 }
 
 AddFriendInput.PropTypes = {
     addFriend: PropTypes.func.isRequired
-  }
+}
